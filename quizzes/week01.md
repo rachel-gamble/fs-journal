@@ -15,13 +15,13 @@ make directory
 **3.** What is the `\<html>\</html>` tag in a document?
 <!-- enter you answer in the space below -->
 ```
-
+it lets the computer know that html code is being used
 ```
 
 **4.** What does `HTML` stand for?
 <!-- enter you answer in the space below -->
 ```
-it lets the computer know that html code is being used
+
 ```
 
 **5.** What Does `CSS` stand for?
