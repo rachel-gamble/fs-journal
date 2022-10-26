@@ -2,8 +2,11 @@
 -----------------------------------------
 ---------! QUICK Properties !---------------
 ----------------------------------------
-color - specifies the color of text
-background-color - specifies the background color
+color: pink - specifies the color of text to pink
+background-color: black - specifies the background color; this ex black
+text-align: center - centers text
+font-family: verdana - changes font family to verdana
+font-size: 20px - change font size to 20px
 
 
 -----------------------------------------
