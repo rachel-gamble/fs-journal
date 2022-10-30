@@ -15,7 +15,7 @@ make directory
 **3.** What is the `\<html>\</html>` tag in a document?
 <!-- enter you answer in the space below -->
 ```
-it lets the computer know that html code is being used
+it lets the computer know that html code is being used. all of the content inside of the <html></html> tag is read and presented by the computer on
 ```
 
 **4.** What does `HTML` stand for?
@@ -63,6 +63,8 @@ in HTML it is in the:
 <body></body>
 tag.
 
+Which is in a <html></html> tag
+
 ```
 
 **9.** What three tags can be used to make lists (not list items)?
@@ -75,8 +77,9 @@ tag.
 
 **10.** Define the display `:flex property:`
 <!-- enter you answer in the space below -->
+
 ```
-the flex property affects how the text, objects, or whatever is being selected is presented on the screen. It controls if the element selected is aligned, centered, spaced evenly, or positioned to the left/right, top/bottom, ect.
+The flex property affects how text, objects or whatever is being selected is presented on the screen browser. It tells the computer if the selected element is aligned, centered, spaced evening, or positioned to the right or left. It also informs the computer if the flexbox takes up only a certain percent of the screen, remains the original size, or fleshes out to the edges of the screen.
 ```
 
 **11.** What `CSS` properties affect the size of a box model?
