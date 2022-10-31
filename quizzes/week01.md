@@ -89,4 +89,9 @@ height:
 width:
 padding:
 margin:
+box-sizing: content-box;
+box-sizing: border-box;
+
+border:
+
 ```
