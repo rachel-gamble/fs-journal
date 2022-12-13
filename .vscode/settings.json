@@ -25,5 +25,8 @@
         "statusBar.debuggingBorder": "#eb3619",
         "titleBar.border": "#19ceeb"
     },
-    "peacock.color": "#19CEEB"
+    "peacock.color": "#19CEEB",
+    "cSpell.ignoreWords": [
+        "Collab"
+    ]
 }

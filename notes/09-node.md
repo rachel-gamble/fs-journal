@@ -1,4 +1,4 @@
-# MVC
+# 12/13/2022 Tuesday - CheckPoint 6 | PostIt example | FullStack
 
 1. Get Collection in console. 
 
@@ -343,17 +343,24 @@ submit + cancel buttons
 </form>
 </template>
 
-<script>
-import ref from 
+<script>    
+import ref 
+
 export default {
     setup(){
         const editable = ref({})
         return {
             editable,
+            const router = useRouter()
             async createAlbum(){
                 try {
-                    logger.log(editable.value)
+                    logger.log(editable.value) // edit this line out after it works
+                const album = await albumsService.createAlbum(editable.value)
+                editable.value = {} // this line makes the form empty after submit
+                Modal.getOrCreateInstance('#exampleModal').hide() // hides form after submit!
+                router.push({name: 'Album', params: {albumId: album.id}})
                 } catch {
+                    error(error)
 
                 }
             }
@@ -363,10 +370,163 @@ export default {
 </script>
 
 
+Now, go to AlbumsService
+
+async createAlbum(body){
+    const res = await api.post('api/albums', body)
+    logger.log('[create album]', res.data)
+    AppState.albums.push(res.data)   // unshift only works well if database works that way? //Sort? idk 
+    return res.data // lets us use unshift with the router on the formpage
+}
+
+
+
+
+
+8. Render new Album data to the AlbumPage
+
+
+onMounted()
+
+<template>
+container-fluid
+row 
+row
+<divs v-if="album" class="col-3"> /// this is the column with album creator info and collaborators
+col-12
+<img :src="album.cover" class="img-fluid rounded">
+<div>{{album.title}}</div>
+<div>by {{album.creator.name}}</div>  //  nested object to get the creator name
+</divs>
+<div class="col-12 d-flex">
+<div>
+{{album.memberCount}} Collaborators
+</div>
+<button class="btn btn-outline-light">
+<div> Collab + heart icon</div>
+</button>
+
+
+
+row
+<div class="col-8"> /// this col has all the pictures in the picture album
+<div class="row">
+<div v-for="p in pictures" class="col-3">
+<a tag here to make a link when the pic is clicked to make it bigger>
+<img :src:"p.imgUrl" class="selectable">
+</div>
+//// add pictures: [] in APPSTATE
+add AppState.pictures.get() // to the Pictures Service get() function
+<div v-for="c in collabs" class="col-6 col-md-6">
+<img :src="c.profile.picture" class="img-fluid elevation-2 rounded selectable" :title="c.profile.name"> // can see name when hovered, with Title
+
+
+</template>
+
+.cover-img{
+    box-shadow: 3pt 3pt #color
+}
+
+<script>
+    export default{
+        setup(){
+        const route = useRoute()
+            async function getAlbumById(){
+                try {
+                    await albumsService.getAlbumById(route.params.albumId)
+                }catch ("oh no!, error)
+                 logger.error(error)
+                }
+
+                async function getPicturesByAlbumId
+            }
+            async getCollabsByAlbumId(){
+                await collabsService.
+                
+            }
+            onMounted(){
+                getAlbumById()
+                getPicturesByAlbumId()
+                getCollabsByAlbumId()
+            }
+            return{
+                album: computed(() => AppState.album)
+                pictures: computed(() => AppState.pictures)
+                collabs: computed(()=> AppState.collabs)
+            }
+        }
+</script>
+
+add getCollabs to CollabsService
+<script>
+async getCollabsByAlbumId(albumId){
+const res = await api.get('api/albums/' + albumId + 'collaborators')
+logger.log('[]', res.data)
+appState.collabs = res.data
+
+}
+</script>
+
+add collabs: [empty array in APPSTATE]
+
 ****************
 
 
-///////
+
+
+9. Set up, can click collaborator + see user's Collabs Albums
+// on homepage: 
+
+<script>
+async function getMyCollabAlbums(){
+    try{
+        await collabsService.getMyCollabAlbums()
+    }catch
+    error
+}
+
+onMounted:
+getMyAlbums()
+getMyCollabAlbums() // can remove this with the Auth call below
+
+// In CollabsService
+
+async getMyCollabAlbums(){
+    try{
+    const res = await api.get('account/collaborators')
+    logger.log('[get collab albums]', res.data)
+    AppState.myCollabs = res.data
+    } catch
+    log error
+}
+
+// TEST
+
+//AuthService.js -> section for adding things once user is authorized 
+collabsService.getMyCollabAlbums()
+
+//Add to AppState | myCollabs: []
+
+// at top of HomePage - Under container-fluid + row || will go on top of the feed of albums
+
+<div class="">My Collabs</div>
+<div v-for="c in myCollabs" class=" col-12 col-md-3 p m"> // control size with styling
+<AlbumCard :album="c.album">
+</div>
+
+                //script
+return{
+    editable,
+    myCollabs: computed(()=> AppState.myCollabs)
+    xxx
+}
+</script>
+
+
+
+
+
+
 
 *************************************
 <!--SECTION Parameters:-->
@@ -425,11 +585,6 @@ Sautrah Pages / components
 HomePage Links:
 1. ^ above things
 2. links to social media ect.
-
-
-
-
-
 
 
 
