@@ -258,7 +258,7 @@ async getAlbumById(){
     })
 
     CollaboratorsSchema.virtual('account({
-        locla
+        loc
     })
 </script>
 
@@ -521,6 +521,20 @@ return{
     xxx
 }
 </script>
+
+
+
+add pop alert to delete - to ask if sure; in controller
+
+*******
+*******
+v-if="account.id"    | only see if logged in
+******!SECTION****
+
+v-if="account.id && ticketHolder" | only shows my events if I'm a ticket holder
+
+
+
 
 
 
