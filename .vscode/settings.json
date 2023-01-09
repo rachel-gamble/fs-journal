@@ -18,12 +18,10 @@
         "titleBar.inactiveBackground": "#19ceeb99",
         "titleBar.inactiveForeground": "#15202b99",
         "tab.activeBorder": "#48d8ef",
-        "panel.border": "#48d8ef",
-        "statusBar.debuggingBackground": "#eb3619",
-        "statusBar.debuggingForeground": "#e7e7e7",
         "statusBar.border": "#19ceeb",
-        "statusBar.debuggingBorder": "#eb3619",
-        "titleBar.border": "#19ceeb"
+        "titleBar.border": "#19ceeb",
+        "editorGroup.border": "#48d8ef",
+        "sideBar.border": "#48d8ef"
     },
     "peacock.color": "#19CEEB",
     "cSpell.ignoreWords": [
