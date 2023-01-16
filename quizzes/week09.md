@@ -3,7 +3,7 @@
 **1.** What is Inheritance?
 <!-- enter you answer in the space below -->
 ```
-
+Inheritance 
 ```
 **2.** What is the `Singleton` design pattern?
 <!-- enter you answer in the space below -->
@@ -33,6 +33,7 @@
 **7.** In Scrum/Agile what is the DoD?
 <!-- enter you answer in the space below -->
 ```
+DoD is the Definition of Done. It defines what is constituted as "done" in a project. This definition is understood by the team, and can include things such as functional requirements, performance standards, and acceptance criteria. 
 
 ```
 **8.** Give two examples of a user story:
