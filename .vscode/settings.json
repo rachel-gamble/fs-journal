@@ -21,7 +21,8 @@
         "statusBar.border": "#19ceeb",
         "titleBar.border": "#19ceeb",
         "editorGroup.border": "#48d8ef",
-        "sideBar.border": "#48d8ef"
+        "sideBar.border": "#48d8ef",
+        "panel.border": "#48d8ef"
     },
     "peacock.color": "#19CEEB",
     "cSpell.ignoreWords": [
